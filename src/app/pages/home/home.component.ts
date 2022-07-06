@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { NbDialogService } from '@nebular/theme';
-import { DialogMetaComponent } from './component/dialog-meta/dialog-meta.component'
+import { NbDialogService } from "@nebular/theme";
+import { DialogMetaComponent } from "./component/dialog-meta/dialog-meta.component";
 
 @Component({
     selector: "ngx-home",
@@ -10,8 +10,14 @@ import { DialogMetaComponent } from './component/dialog-meta/dialog-meta.compone
 })
 export class HomeComponent implements OnInit {
     fileName = "";
-    fileUoload : any;
-    constructor(private http: HttpClient, private dialogService: NbDialogService) {}
+    fileUoload: any;
+    nameWebsite: any;
+    titleWebsite: any;
+    desWebsite: any;
+    constructor(
+        private http: HttpClient,
+        private dialogService: NbDialogService
+    ) {}
 
     ngOnInit(): void {}
 
@@ -22,10 +28,9 @@ export class HomeComponent implements OnInit {
         // console.log(" this.fileUoload", this.fileUoload);
 
         const reader = new FileReader();
-        reader.onload = e => this.fileUoload = reader.result;
+        reader.onload = (e) => (this.fileUoload = reader.result);
 
         reader.readAsDataURL(file);
-
 
         if (file) {
             this.fileName = file.name;
@@ -42,9 +47,15 @@ export class HomeComponent implements OnInit {
 
     open() {
         this.dialogService.open(DialogMetaComponent, {
-          context: {
-            title: 'This is a title passed to the dialog component',
-          },
+            context: {
+                title: "This is a title passed to the dialog component",
+            },
         });
-      }
+    }
+
+    saveHome() {
+        const usr= this.nameWebsite;
+     const password= this.titleWebsite;
+     console.log("user is" + usr , password);
+    }
 }

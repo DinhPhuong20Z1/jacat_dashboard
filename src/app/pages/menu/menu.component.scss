@@ -100,3 +100,19 @@ nb-card.dialog {
     }
 }
 
+.saveListMenu {
+    float: right;
+}
+
+.dialog {
+    .example-items-col {
+        input:not(:first-child) {
+            margin-top: 1em;
+        }
+    }
+    nb-card-footer {
+        .btn-save, .btn-delete {
+            margin-right: 1em;
+        }
+    }
+}

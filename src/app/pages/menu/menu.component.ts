@@ -9,20 +9,13 @@ import { NbDialogRef, NbDialogService } from "@nebular/theme";
 })
 export class MenuComponent implements OnInit {
     movies = [
-        {name: "Trang chủ", url: "https://www.youtube.com/c/vtv24"},
-        {name: "Giới thiệu", url: "https://www.youtube.com/c/vtv24"},
-        {name:  "Sản Phẩm", url: "https://www.youtube.com/c/vtv24"},
-        {name: "Hoạt động", url: "https://www.youtube.com/c/vtv24"},
-        {name:  "Thư viện", url: "https://www.youtube.com/c/vtv24"},
-        {name: "Tuyển dụng", url: "https://www.youtube.com/c/vtv24"},
-        {name: "Liên hệ", url: "https://www.youtube.com/c/vtv24"},
-        
-        
-       
-        
-       
-        
-        
+        { name: "Trang chủ", url: "https://www.youtube.com/c/vtv24" },
+        { name: "Giới thiệu", url: "https://www.youtube.com/c/vtv24" },
+        { name: "Sản Phẩm", url: "https://www.youtube.com/c/vtv24" },
+        { name: "Hoạt động", url: "https://www.youtube.com/c/vtv24" },
+        { name: "Thư viện", url: "https://www.youtube.com/c/vtv24" },
+        { name: "Tuyển dụng", url: "https://www.youtube.com/c/vtv24" },
+        { name: "Liên hệ", url: "https://www.youtube.com/c/vtv24" },
     ];
     @ViewChild("dialogEditMenu", { read: TemplateRef })
     dialogEditMenu: TemplateRef<HTMLElement>;
@@ -48,50 +41,40 @@ export class MenuComponent implements OnInit {
         console.log("index", index);
 
         // if (!this.nameEdit) {
-            this.nameEdit = this.movies[index].name;
+        this.nameEdit = this.movies[index].name;
         // }
         // if(!this.urlNameEdit) {
-            this.urlNameEdit = this.movies[index].url;
+        this.urlNameEdit = this.movies[index].url;
         // }
     }
 
-    onNameEditMenu(name) {
-        this.nameEdit = name;
-    }
-
-    onUrlEditMenu(url) {
-        this.urlNameEdit = url;
-    }
-
-    deleteMenu(index: number, dialog: NbDialogRef < any >,) {
+    deleteMenu(index: number, dialog: NbDialogRef<any>) {
         const deleteData = this.movies.filter(
             (i: any, idx: any) => idx !== index
         );
         this.movies = deleteData;
         dialog.close();
-
-        
     }
-    saveMenu(index: number, dialog: NbDialogRef < any >,) {
-        this.movies[index].name = this.nameEdit
-        this.movies[index].url = this.urlNameEdit
+    saveMenu(index: number, dialog: NbDialogRef<any>) {
+        this.movies[index].name = this.nameEdit;
+        this.movies[index].url = this.urlNameEdit;
         dialog.close();
     }
     clickAddName(name: string, UrlAdd: string) {
         console.log("nameAdd", this.nameAdd);
-        let addMenu = {name: name, url: UrlAdd}
+        let addMenu = { name: name, url: UrlAdd };
         this.movies.push(addMenu);
         this.nameAdd = "";
         this.UrlAdd = "";
     }
 
-    onNameAddMenu(name: string) {
-        this.nameAdd = name;
-    }
+    // onNameAddMenu(name: string) {
+    //     this.nameAdd = name;
+    // }
 
-    onUrlAddMenu(url: string) {
-        this.UrlAdd = url;
-    }
+    // onUrlAddMenu(url: string) {
+    //     this.UrlAdd = url;
+    // }
 
-    onDes
+    saveListMenu() {}
 }

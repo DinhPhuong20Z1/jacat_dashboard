@@ -1,8 +1,14 @@
-@import '../../@theme/styles/themes.scss';
+@import "../../@theme/styles/themes.scss";
 
 .file-input {
     display: none;
-  }
-  nb-card-body input, .file-upload, nb-card-body button {
+}
+nb-card-body input,
+.file-upload,
+nb-card-body button {
     margin-top: 1rem;
-  }
+}
+
+.saveHome {
+   float: right
+}

@@ -5,23 +5,23 @@
                 type="text"
                 nbInput
                 placeholder="name menu"
-                [ngModel]="nameAdd"
-                (ngModelChange)="onNameAddMenu($event)"
+                [(ngModel)]="nameAdd"
                 name="nameAdd"
             />
             <input
                 type="text"
                 nbInput
                 placeholder="url menu"
-                [ngModel]="UrlAdd"
-                (ngModelChange)="onUrlAddMenu($event)"
+                [(ngModel)]="UrlAdd"
                 name="nameAdd"
+                style="margin-left: 1em"
             />
             <button
                 class="btn-add-menu"
                 nbButton
                 status="success"
                 (click)="clickAddName(nameAdd, UrlAdd)"
+                [disabled]="!nameAdd || !UrlAdd"
             >
                 Add Menu
             </button>
@@ -51,6 +51,15 @@
                 </div>
             </div>
         </div>
+
+        <button
+            class="saveListMenu"
+            nbButton
+            status="success"
+            (click)="saveListMenu()"
+        >
+            Save
+        </button>
     </nb-card-body>
 </nb-card>
 
@@ -63,24 +72,32 @@
                 nbInput
                 placeholder="name menu"
                 fullWidth
-                [ngModel]="nameEdit"
-                (ngModelChange)="onNameEditMenu($event)"
+                [(ngModel)]="nameEdit"
+                class="name-edit"
             />
             <input
                 type="text"
                 nbInput
                 placeholder="url menu"
                 fullWidth
-                [ngModel]="urlNameEdit"
-                (ngModelChange)="onUrlEditMenu($event)"
+                [(ngModel)]="urlNameEdit"
+                class="url-edit"
             />
         </nb-card-body>
-        <nb-card-footer class="row flex">
-            <button nbButton status="success" (click)="saveMenu(data.indexMenu, ref)">Save</button>
+        <nb-card-footer class="row flex" style="justify-content: flex-end">
+            <button
+                nbButton
+                status="success"
+                (click)="saveMenu(data.indexMenu, ref)"
+                class="btn-save"
+            >
+                Save
+            </button>
             <button
                 nbButton
                 status="danger"
                 (click)="deleteMenu(data.indexMenu, ref)"
+                class="btn-delete"
             >
                 Delete
             </button>
@@ -92,6 +109,7 @@
                 (click)="
                     data.closeFunc ? data.closeFunc(ref.close()) : ref.close()
                 "
+                class="btn-close"
             >
                 Close
             </button>

@@ -1,8 +1,8 @@
 <nb-card>
     <nb-card-body class="example-items-col">
-        <input type="text" nbInput placeholder="name website" fullWidth />
-        <input type="text" nbInput placeholder="title website" fullWidth/>
-        <input type="text" nbInput placeholder="description website"fullWidth />
+        <input type="text" nbInput placeholder="name website" fullWidth [(ngModel)]="nameWebsite" />
+        <input type="text" nbInput placeholder="title website" fullWidth [(ngModel)]="titleWebsite" />
+        <input type="text" nbInput placeholder="description website"fullWidth [(ngModel)]="desWebsite" />
 
         <input
             type="file"
@@ -10,6 +10,7 @@
             (change)="onFileSelected($event)"
             #fileUpload
             fullWidth
+            accept="image/png, image/jpeg"
         />
 
         <div class="file-upload">
@@ -31,7 +32,15 @@
 
         <input type="Domain" nbInput placeholder="domain website" fullWidth disabled/>
 
-        <button nbButton (click)="open()">Meta</button>
+        <div >
+            <button nbButton (click)="open()">Meta</button>
+
+            <button class="saveHome" nbButton status="success" (click)="saveHome()">Save</button>
+        </div>
+
+
 
     </nb-card-body>
+
+
 </nb-card>
