@@ -10,20 +10,25 @@
             #fileUpload
         />
         <div class="file-upload">
-
-
             <button
                 color="primary"
                 class="upload-btn"
                 (click)="fileUpload.click()"
-                (drop)="dropHandler($event);"
-                (dragover)="dragOverHandler($event);"
+                (drop)="dropHandler($event)"
+                (dragover)="dragOverHandler($event)"
             >
-
                 <nb-icon icon="upload-outline"></nb-icon>
-                <p style="margin:0px ;">Upload</p>
+                <p style="margin: 0px">Upload</p>
             </button>
         </div>
         <div id="preview"></div>
+
+        <!-- <input type="file" accept="video/*" id="input-tag" />
+        <hr />
+
+        <video style="display: none;" controls id="video-tag">
+            <source id="video-source"  />
+            Your browser does not support the video tag.
+        </video> -->
     </nb-card-body>
 </nb-card>

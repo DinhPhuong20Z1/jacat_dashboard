@@ -11,7 +11,29 @@ export class MediaComponent implements OnInit {
     files: any = [];
     constructor() {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        // const videoSrc = document.querySelector("#video-source") as HTMLVideoElement | null;
+        //     const videoTag = document.querySelector("#video-tag") as HTMLVideoElement | null;
+        //     const inputTag = document.querySelector("#input-tag") as HTMLVideoElement | null;
+
+        //     inputTag.addEventListener("change", readVideo);
+
+        //     function readVideo(event) {
+        //         console.log(event.target.files);
+        //         if (event.target.files && event.target.files[0]) {
+        //             var reader = new FileReader();
+
+        //             reader.onload = function (e) {
+        //                 console.log("loaded");
+        //                 videoSrc.src = e.target.result;
+        //                 videoTag.load();
+        //                 videoTag.style.display = "block";
+        //             }.bind(this);
+
+        //             reader.readAsDataURL(event.target.files[0]);
+        //         }
+        //     }
+    }
 
     previewFiles() {
         const preview = document.querySelector("#preview");

@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
         this.options = ["Option 1", "Option 2", "Option 3"];
         this.filteredOptions$ = of(this.options);
-        this.defaultOption = "Option 2"
+        // this.defaultOption = "Option 2"
     }
 
     onFileSelected(event) {

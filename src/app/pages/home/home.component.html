@@ -102,7 +102,6 @@
                     placeholder="font website"
                     [nbAutocomplete]="auto"
                     fullWidth
-                    [(ngModel)]="defaultOption"
                 />
                 <nb-autocomplete #auto (selectedChange)="onSelectionChange($event)">
                     <nb-option
