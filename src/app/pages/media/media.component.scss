@@ -7,3 +7,20 @@ nb-card-body input,
 nb-card-body button, #preview {
     margin-top: 1rem;
 }
+
+nb-card-body button {
+    width: 100px;
+    height: 100px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+    vertical-align: top;
+    background-color: #fafafa;
+    border: 1px dashed #d9d9d9;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: border-color .3s;
+}
+
+
+

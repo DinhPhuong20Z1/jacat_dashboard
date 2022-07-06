@@ -95,6 +95,7 @@ nb-card.dialog {
 .add-menu {
     display: flex;
     align-items: center;
+    margin-bottom: 1em;
     .btn-add-menu {
         margin-left: 1em;
     }
@@ -106,13 +107,25 @@ nb-card.dialog {
 
 .dialog {
     .example-items-col {
-        input:not(:first-child) {
-            margin-top: 1em;
+        .form-group:not(:first-child) {
+            margin-top: 2em;
         }
     }
     nb-card-footer {
         .btn-save, .btn-delete {
             margin-right: 1em;
         }
+    }
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    label.label {
+        margin-right: 10px;
+    }
+    .form-input {
+        flex: 1 1 auto;
     }
 }

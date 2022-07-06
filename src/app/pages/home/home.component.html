@@ -1,26 +1,47 @@
 <nb-card>
     <nb-card-body class="example-items-col">
-        <input
-            type="text"
-            nbInput
-            placeholder="name website"
-            fullWidth
-            [(ngModel)]="nameWebsite"
-        />
-        <input
-            type="text"
-            nbInput
-            placeholder="title website"
-            fullWidth
-            [(ngModel)]="titleWebsite"
-        />
-        <input
-            type="text"
-            nbInput
-            placeholder="description website"
-            fullWidth
-            [(ngModel)]="desWebsite"
-        />
+        <div class="form-group">
+            <label for="label" class="label col-form-label">Name website</label>
+            <div class="form-input">
+                <input
+                    type="text"
+                    nbInput
+                    placeholder="name website"
+                    fullWidth
+                    [(ngModel)]="nameWebsite"
+                />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="label" class="label col-form-label"
+                >Title website</label
+            >
+            <div class="form-input">
+                <input
+                    type="text"
+                    nbInput
+                    placeholder="title website"
+                    fullWidth
+                    [(ngModel)]="titleWebsite"
+                />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="label" class="label col-form-label"
+                >Description website</label
+            >
+            <div class="form-input">
+                <input
+                    type="text"
+                    nbInput
+                    placeholder="description website"
+                    fullWidth
+                    [(ngModel)]="desWebsite"
+                />
+            </div>
+        </div>
 
         <input
             type="file"
@@ -53,33 +74,50 @@
             </div>
         </div>
 
-        <input
-            type="Domain"
-            nbInput
-            placeholder="domain website"
-            fullWidth
-            disabled
-        />
-
-        <input
-            #autoInput
-            nbInput
-            type="text"
-            (input)="onChange()"
-            placeholder="font website"
-            [nbAutocomplete]="auto"
-            fullWidth
-            [(ngModel)]="defaultOption"
-        />
-
-        <nb-autocomplete #auto (selectedChange)="onSelectionChange($event)">
-            <nb-option
-                *ngFor="let option of filteredOptions$ | async"
-                [value]="option"
+        <div class="form-group">
+            <label for="label" class="label col-form-label"
+                >Domain website</label
             >
-                {{ option }}
-            </nb-option>
-        </nb-autocomplete>
+            <div class="form-input">
+                <input
+                    type="Domain"
+                    nbInput
+                    placeholder="domain website"
+                    fullWidth
+                    disabled
+                />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="label" class="label col-form-label"
+                >Font website</label
+            >
+            <div class="form-input">
+                <input
+                    #autoInput
+                    nbInput
+                    type="text"
+                    (input)="onChange()"
+                    placeholder="font website"
+                    [nbAutocomplete]="auto"
+                    fullWidth
+                    [(ngModel)]="defaultOption"
+                />
+                <nb-autocomplete #auto (selectedChange)="onSelectionChange($event)">
+                    <nb-option
+                        *ngFor="let option of filteredOptions$ | async"
+                        [value]="option"
+                    >
+                        {{ option }}
+                    </nb-option>
+                </nb-autocomplete>
+            </div>
+        </div>
+
+
+
+
 
         <div>
             <button nbButton (click)="open()">Meta</button>

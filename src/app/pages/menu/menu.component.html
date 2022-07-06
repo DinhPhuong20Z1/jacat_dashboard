@@ -1,21 +1,34 @@
 <nb-card>
     <nb-card-body class="example-items-col">
         <div class="add-menu">
-            <input
-                type="text"
-                nbInput
-                placeholder="name menu"
-                [(ngModel)]="nameAdd"
-                name="nameAdd"
-            />
-            <input
-                type="text"
-                nbInput
-                placeholder="url menu"
-                [(ngModel)]="UrlAdd"
-                name="nameAdd"
-                style="margin-left: 1em"
-            />
+            <div class="form-group">
+                <label for="label" class="label col-form-label"
+                    >Name menu</label
+                >
+                <div class="form-input">
+                    <input
+                        type="text"
+                        nbInput
+                        placeholder="name menu"
+                        [(ngModel)]="nameAdd"
+                        name="nameAdd"
+                    />
+                </div>
+            </div>
+
+            <div style="margin-left: 1em" class="form-group">
+                <label for="label" class="label col-form-label">Url menu</label>
+                <div class="form-input">
+                    <input
+                        type="text"
+                        nbInput
+                        placeholder="url menu"
+                        [(ngModel)]="UrlAdd"
+                        name="nameAdd"
+                    />
+                </div>
+            </div>
+
             <button
                 class="btn-add-menu"
                 nbButton
@@ -67,22 +80,37 @@
     <nb-card class="dialog">
         <nb-card-header>Edit Menu</nb-card-header>
         <nb-card-body class="example-items-col">
-            <input
-                type="text"
-                nbInput
-                placeholder="name menu"
-                fullWidth
-                [(ngModel)]="nameEdit"
-                class="name-edit"
-            />
-            <input
-                type="text"
-                nbInput
-                placeholder="url menu"
-                fullWidth
-                [(ngModel)]="urlNameEdit"
-                class="url-edit"
-            />
+            <div class="form-group">
+                <label for="label" class="label col-form-label"
+                    >Name edit menu</label
+                >
+                <div class="form-input">
+                    <input
+                        type="text"
+                        nbInput
+                        placeholder="name menu"
+                        fullWidth
+                        [(ngModel)]="nameEdit"
+                        class="name-edit"
+                    />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="label" class="label col-form-label"
+                    >Url edit menu</label
+                >
+                <div class="form-input">
+                    <input
+                        type="text"
+                        nbInput
+                        placeholder="url menu"
+                        fullWidth
+                        [(ngModel)]="urlNameEdit"
+                        class="url-edit"
+                    />
+                </div>
+            </div>
         </nb-card-body>
         <nb-card-footer class="row flex" style="justify-content: flex-end">
             <button

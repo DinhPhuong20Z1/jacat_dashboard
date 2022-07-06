@@ -10,14 +10,18 @@
             #fileUpload
         />
         <div class="file-upload">
-            <span style="margin-right:10px ;">Upload Media</span>
+
 
             <button
                 color="primary"
                 class="upload-btn"
                 (click)="fileUpload.click()"
+                (drop)="dropHandler($event);"
+                (dragover)="dragOverHandler($event);"
             >
+
                 <nb-icon icon="upload-outline"></nb-icon>
+                <p style="margin:0px ;">Upload</p>
             </button>
         </div>
         <div id="preview"></div>
