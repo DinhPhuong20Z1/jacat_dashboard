@@ -48,7 +48,7 @@ const routes: Routes = [{
         },
         {
             path: '',
-            redirectTo: 'versions',
+            redirectTo: 'home',
             pathMatch: 'full',
         },
         {

@@ -1,7 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { NbDialogService } from "@nebular/theme";
 import { DialogMetaComponent } from "./component/dialog-meta/dialog-meta.component";
+import { Observable, of } from "rxjs";
+import { map } from "rxjs/operators";
 
 @Component({
     selector: "ngx-home",
@@ -11,15 +13,26 @@ import { DialogMetaComponent } from "./component/dialog-meta/dialog-meta.compone
 export class HomeComponent implements OnInit {
     fileName = "";
     fileUoload: any;
-    nameWebsite: any;
-    titleWebsite: any;
-    desWebsite: any;
+    nameWebsite: string;
+    titleWebsite: string;
+    desWebsite: string;
+    fontWebsite: string;
+    defaultOption: string;
+
+    options: string[];
+    filteredOptions$: Observable<string[]>;
+    @ViewChild("autoInput") input;
+
     constructor(
         private http: HttpClient,
         private dialogService: NbDialogService
     ) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.options = ["Option 1", "Option 2", "Option 3"];
+        this.filteredOptions$ = of(this.options);
+        this.defaultOption = "Option 2"
+    }
 
     onFileSelected(event) {
         const file: File = event.target.files[0];
@@ -54,8 +67,29 @@ export class HomeComponent implements OnInit {
     }
 
     saveHome() {
-        const usr= this.nameWebsite;
-     const password= this.titleWebsite;
-     console.log("user is" + usr , password);
+        const usr = this.nameWebsite;
+        const password = this.titleWebsite;
+        console.log("user is" + usr, password);
+    }
+
+    private filter(value: string): string[] {
+        const filterValue = value.toLowerCase();
+        return this.options.filter((optionValue) =>
+            optionValue.toLowerCase().includes(filterValue)
+        );
+    }
+
+    getFilteredOptions(value: string): Observable<string[]> {
+        return of(value).pipe(map((filterString) => this.filter(filterString)));
+    }
+
+    onChange() {
+        this.filteredOptions$ = this.getFilteredOptions(
+            this.input.nativeElement.value
+        );
+    }
+
+    onSelectionChange($event) {
+        this.filteredOptions$ = this.getFilteredOptions($event);
     }
 }

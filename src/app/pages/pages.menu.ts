@@ -25,12 +25,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/menu',
         home: true,
     },
-    {
-        title: 'Page',
-        icon: 'folder-outline',
-        link: '/pages/page',
-        home: true,
-    },
+    // {
+    //     title: 'Page',
+    //     icon: 'folder-outline',
+    //     link: '/pages/page',
+    //     home: true,
+    // },
     {
         title: 'Component',
         icon: 'folder-outline',
